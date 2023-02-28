@@ -41,17 +41,10 @@ int main(void)
         scanf("%d%d%d%d%d%d", &player.x, &player.y, &checkpoint.x, &checkpoint.y, &checkpoint.distance, &checkpoint.angle);
         scanf("%d%d", &opponent.x, &opponent.y);
 
-        if (checkpoint.angle > -10 && checkpoint.angle < 10 && checkpoint.distance > 500) {
+        if (checkpoint.angle > -45 && checkpoint.angle < 45 && checkpoint.distance > 500) {
             player.thrust = 100;
         } else {
-            if (checkpoint.angle > 90 || checkpoint.angle < -45) {
-                player.thrust = 0;
-            } else {
-                player.thrust = 100;
-            }
-        }
-        if (checkpoint.angle == 0 && checkpoint.distance < 1000) {
-            player.thrust = 0;
+            player.thrust = 20;
         }
 
         printf("%d %d", checkpoint.x, checkpoint.y);
